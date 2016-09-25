@@ -3,6 +3,27 @@
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
   </head>
   <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
-  </body>
+<h1>Registration</h1>
+<form action="/register" method="POST">
+	<h2>First Name: <input type="text" name="first_name"></h2>
+	<h2>Last Name: <input type="text" name="last_name"></h2>
+	<h2>Email: <input type="text" name="email"></h2>
+	<h2>Password: <input type="text" name="password"></h2>
+	<h2>Confirm pw: <input type="text" name="confirmpw"></h2>
+	<input type="submit" value="Register">
+</form> 
+<h1>Login</h1>
+{% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+<form action="/logthein" method="POST">
+	<h2>Email: <input type="text" name="emaillog"></h2>
+	<h2>Password: <input type="text" name="passwordlog"></h2>
+	<input type="submit" value="Login">
+</form>
+ </body>
 </html>
